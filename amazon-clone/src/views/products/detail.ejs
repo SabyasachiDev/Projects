@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+
+<div class="product-detail">
+  <div class="product-detail-grid">
+    <div class="product-images">
+      <img src="<%= product.image %>" alt="<%= product.name %>" class="product-main-image">
+    </div>
+    
+    <div class="product-info">
+      <h1><%= product.name %></h1>
+      
+      <div class="product-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <span>(245 reviews)</span>
+      </div>
+      
+      <div class="product-price-detail">
+        <span class="sale-price">$<%= product.price.toFixed(2) %></span>
+      </div>
+      
+      <div class="product-description">
+        <p><%= product.details %></p>
+      </div>
+      
+      <form action="/cart/add" method="POST" class="add-to-cart-form">
+        <input type="hidden" name="productId" value="<%= product.id %>">
+        
+        <div class="quantity-input">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+        </div>
+        
+        <button type="submit" class="add-to-cart-btn">
+          <i class="fas fa-shopping-cart"></i> Add to Cart
+        </button>
+      </form>
+      
+      <div class="product-meta">
+        <p><strong>Category:</strong> <%= product.category %></p>
+        <p><strong>Availability:</strong> <span class="in-stock">In Stock</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

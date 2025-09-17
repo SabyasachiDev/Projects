@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+
+<div class="profile-container">
+  <h1>My Profile</h1>
+  
+  <div class="profile-card">
+    <div class="profile-section">
+      <h2>Account Information</h2>
+      <div class="profile-info">
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <a href="/users/edit-profile" class="btn">Edit Profile</a>
+      </div>
+    </div>
+    
+    <div class="profile-section">
+      <h2>Recent Orders</h2>
+      <!-- In a real app, this would show actual order history -->
+      <div class="no-orders">
+        <p>You haven't placed any orders yet.</p>
+        <a href="/products" class="btn">Start Shopping</a>
+      </div>
+    </div>
+    
+    <div class="profile-section">
+      <h2>Saved Addresses</h2>
+      <!-- In a real app, this would show saved addresses -->
+      <div class="no-addresses">
+        <p>You don't have any saved addresses.</p>
+        <a href="/users/add-address" class="btn">Add Address</a>
+      </div>
+    </div>
+    
+    <div class="profile-section">
+      <h2>Payment Methods</h2>
+      <!-- In a real app, this would show saved payment methods -->
+      <div class="no-payment-methods">
+        <p>You don't have any saved payment methods.</p>
+        <a href="/users/add-payment" class="btn">Add Payment Method</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

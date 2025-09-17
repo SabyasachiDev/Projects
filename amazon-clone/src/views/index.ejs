@@ -1,0 +1,165 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to AmazonClone</h1>
+    <p>Discover amazing products at unbeatable prices</p>
+    <a href="/products" class="btn btn-primary">Shop Now</a>
+  </div>
+</section>
+
+<section class="featured-categories">
+  <h2>Shop by Category</h2>
+  <div class="category-grid">
+    <div class="category-card">
+      <img src="/images/electronics-category.jpg" alt="Electronics">
+      <h3>Electronics</h3>
+      <a href="/products?category=Electronics" class="btn">Shop Now</a>
+    </div>
+    <div class="category-card">
+      <img src="/images/fashion-category.jpg" alt="Fashion">
+      <h3>Fashion</h3>
+      <a href="/products?category=Fashion" class="btn">Shop Now</a>
+    </div>
+    <div class="category-card">
+      <img src="/images/home-category.jpg" alt="Home & Kitchen">
+      <h3>Home & Kitchen</h3>
+      <a href="/products?category=Home%20%26%20Kitchen" class="btn">Shop Now</a>
+    </div>
+    <div class="category-card">
+      <img src="/images/books-category.jpg" alt="Books">
+      <h3>Books</h3>
+      <a href="/products?category=Books" class="btn">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="deals">
+  <h2>Today's Deals</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-badge">Sale</div>
+      <img src="/images/headphones.jpg" alt="Wireless Headphones">
+      <h3>Wireless Headphones</h3>
+      <div class="product-price">
+        <span class="original-price">$129.99</span>
+        <span class="sale-price">$99.99</span>
+      </div>
+      <div class="product-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <span>(245)</span>
+      </div>
+      <a href="/products/1" class="btn">View Product</a>
+    </div>
+    
+    <div class="product-card">
+      <div class="product-badge">Sale</div>
+      <img src="/images/smartphone.jpg" alt="Smartphone">
+      <h3>Smartphone</h3>
+      <div class="product-price">
+        <span class="original-price">$799.99</span>
+        <span class="sale-price">$699.99</span>
+      </div>
+      <div class="product-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <span>(512)</span>
+      </div>
+      <a href="/products/2" class="btn">View Product</a>
+    </div>
+    
+    <div class="product-card">
+      <div class="product-badge">Sale</div>
+      <img src="/images/shoes.jpg" alt="Running Shoes">
+      <h3>Running Shoes</h3>
+      <div class="product-price">
+        <span class="original-price">$119.99</span>
+        <span class="sale-price">$89.99</span>
+      </div>
+      <div class="product-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        <span>(187)</span>
+      </div>
+      <a href="/products/3" class="btn">View Product</a>
+    </div>
+    
+    <div class="product-card">
+      <div class="product-badge">Sale</div>
+      <img src="/images/coffee-maker.jpg" alt="Coffee Maker">
+      <h3>Coffee Maker</h3>
+      <div class="product-price">
+        <span class="original-price">$69.99</span>
+        <span class="sale-price">$49.99</span>
+      </div>
+      <div class="product-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <i class="far fa-star"></i>
+        <span>(103)</span>
+      </div>
+      <a href="/products/4" class="btn">View Product</a>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="banner-content">
+    <h2>Prime Day Deals</h2>
+    <p>Exclusive deals for Prime members. Limited time only!</p>
+    <a href="/products?deal=prime" class="btn btn-primary">Shop Now</a>
+  </div>
+</section>
+
+<section class="featured-products">
+  <h2>Featured Products</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="/images/fitness-tracker.jpg" alt="Fitness Tracker">
+      <h3>Fitness Tracker</h3>
+      <div class="product-price">
+        <span class="sale-price">$79.99</span>
+      </div>
+      <div class="product-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        <span>(156)</span>
+      </div>
+      <a href="/products/5" class="btn">View Product</a>
+    </div>
+    
+    <div class="product-card">
+      <img src="/images/laptop.jpg" alt="Laptop">
+      <h3>Laptop</h3>
+      <div class="product-price">
+        <span class="sale-price">$1299.99</span>
+      </div>
+      <div class="product-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <span>(324)</span>
+      </div>
+      <a href="/products/6" class="btn">View Product</a>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

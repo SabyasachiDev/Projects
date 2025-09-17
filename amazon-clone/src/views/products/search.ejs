@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+<div class="search-results-container">
+  <h1 class="page-title">Search Results for "<%= query %>"</h1>
+  
+  <% if (products && products.length > 0) { %>
+    <p class="search-count"><%= products.length %> products found</p>
+    
+    <div class="product-grid">
+      <% products.forEach(product => { %>
+        <div class="product-card">
+          <img src="<%= product.image %>" alt="<%= product.name %>">
+          <h3><%= product.name %></h3>
+          <div class="product-price">
+            <span class="sale-price">$<%= product.price.toFixed(2) %></span>
+          </div>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>(245)</span>
+          </div>
+          <a href="/products/<%= product.id %>" class="btn">View Product</a>
+        </div>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <div class="no-results">
+      <p>No products found matching "<%= query %>".</p>
+      <p>Try checking your spelling or using more general terms.</p>
+      <a href="/products" class="btn">View All Products</a>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>

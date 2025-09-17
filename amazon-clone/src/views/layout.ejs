@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | Amazon Clone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/">
+          <h1>amazon<span class="highlight">clone</span></h1>
+        </a>
+      </div>
+      
+      <div class="search-bar">
+        <form action="/products/search" method="POST">
+          <input type="text" name="query" placeholder="Search products...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+      
+      <nav class="nav-links">
+        <ul>
+          <% if (user) { %>
+            <li class="dropdown">
+              <a href="#">Hello, <%= user.name %> <i class="fas fa-caret-down"></i></a>
+              <div class="dropdown-content">
+                <a href="/users/profile">Your Profile</a>
+                <a href="/users/orders">Your Orders</a>
+                <a href="/users/logout">Sign Out</a>
+              </div>
+            </li>
+          <% } else { %>
+            <li><a href="/users/login">Sign In</a></li>
+            <li><a href="/users/register">Register</a></li>
+          <% } %>
+          <li><a href="/cart"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="categories">
+    <div class="categories-container">
+      <ul>
+        <li><a href="/products?category=Electronics">Electronics</a></li>
+        <li><a href="/products?category=Fashion">Fashion</a></li>
+        <li><a href="/products?category=Home & Kitchen">Home & Kitchen</a></li>
+        <li><a href="/products?category=Books">Books</a></li>
+        <li><a href="/products?category=Toys">Toys</a></li>
+        <li><a href="/products?category=Sports">Sports</a></li>
+        <li><a href="/products?category=Beauty">Beauty</a></li>
+        <li><a href="/products">All Products</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <%- body %>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h3>Get to Know Us</h3>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/press">Press Releases</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Make Money with Us</h3>
+          <ul>
+            <li><a href="/sell">Sell on AmazonClone</a></li>
+            <li><a href="/affiliate">Become an Affiliate</a></li>
+            <li><a href="/advertise">Advertise Your Products</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Payment Products</h3>
+          <ul>
+            <li><a href="/card">AmazonClone Card</a></li>
+            <li><a href="/shop-points">Shop with Points</a></li>
+            <li><a href="/reload">Reload Your Balance</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Let Us Help You</h3>
+          <ul>
+            <li><a href="/account">Your Account</a></li>
+            <li><a href="/orders">Your Orders</a></li>
+            <li><a href="/help">Help</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 AmazonClone. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

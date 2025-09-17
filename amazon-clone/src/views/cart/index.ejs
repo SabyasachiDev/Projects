@@ -1,0 +1,66 @@
+<%- include('../partials/header') %>
+
+<div class="cart-container">
+  <h1 class="cart-title">Shopping Cart</h1>
+  
+  <% if (cartItems && cartItems.length > 0) { %>
+    <div class="cart-items">
+      <% cartItems.forEach(item => { %>
+        <div class="cart-item">
+          <div class="cart-item-image">
+            <img src="<%= item.image %>" alt="<%= item.name %>">
+          </div>
+          
+          <div class="cart-item-details">
+            <h3><%= item.name %></h3>
+            <p class="cart-item-price">$<%= item.price.toFixed(2) %></p>
+          </div>
+          
+          <div class="cart-item-quantity">
+            <form action="/cart/update" method="POST">
+              <input type="hidden" name="productId" value="<%= item.id %>">
+              <button type="button" class="quantity-btn">-</button>
+              <input type="number" name="quantity" value="<%= item.quantity %>" min="1" max="10">
+              <button type="button" class="quantity-btn">+</button>
+            </form>
+          </div>
+          
+          <div class="cart-item-remove">
+            <form action="/cart/remove" method="POST">
+              <input type="hidden" name="productId" value="<%= item.id %>">
+              <button type="submit" class="remove-btn">
+                <i class="fas fa-trash"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+    
+    <div class="cart-summary">
+      <div class="cart-summary-row">
+        <span>Subtotal (<%= cartItems.reduce((sum, item) => sum + item.quantity, 0) %> items):</span>
+        <span>$<%= total %></span>
+      </div>
+      
+      <div class="cart-summary-row">
+        <span>Shipping:</span>
+        <span>Free</span>
+      </div>
+      
+      <div class="cart-summary-row cart-summary-total">
+        <span>Total:</span>
+        <span>$<%= total %></span>
+      </div>
+      
+      <a href="/cart/checkout" class="checkout-btn">Proceed to Checkout</a>
+    </div>
+  <% } else { %>
+    <div class="cart-empty">
+      <p>Your cart is empty.</p>
+      <a href="/products" class="btn btn-primary">Continue Shopping</a>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>
